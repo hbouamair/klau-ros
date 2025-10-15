@@ -1,0 +1,44 @@
+# Endless Academy - Project Guidelines
+
+## Font System
+
+- **Primary Font**: Plus Jakarta Sans (clean, modern sans-serif for body text)
+- **Display Font**: Playfair Display (elegant serif for headings)
+- Use `font-display` class for all major headings
+- Use `font-sans` (default) for body text
+
+## Design Principles
+
+- Modern, animated, and vibrant design
+- Gradient backgrounds (primary-600 to pink-600)
+- Smooth transitions and hover effects
+- Glassmorphism effects where appropriate
+- Responsive design (mobile-first)
+
+## Card Layout
+
+- All cards must use `flex flex-col h-full` for consistent height
+- Content sections should use `flex-grow` to fill space
+- Use `mt-auto` for bottom-aligned content
+- Grid containers should use `items-stretch` class
+
+## Color Scheme
+
+- Primary: Red gradient (#dc2626 to #b91c1c)
+- Accent: Pink (#ec4899)
+- Use gradient text for important headings
+- Shadows: Multiple levels (shadow-lg, shadow-xl, shadow-2xl)
+
+## Animation Classes
+
+- animate-fade-in
+- animate-slide-in-left / animate-slide-in-right
+- animate-scale-in
+- animate-float
+- animate-gradient
+
+## Component Guidelines
+
+- Buttons: Use btn-primary or btn-secondary classes
+- Cards: Use card or card-gradient classes
+- Titles: Use section-title and section-subtitle classes
