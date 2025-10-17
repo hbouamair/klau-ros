@@ -227,19 +227,12 @@ export default function AboutPage() {
                   {/* Profile image container */}
                   <div className="relative">
                     <div 
-                      className="rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl overflow-hidden transform group-hover:scale-105 transition-all duration-700"
+                      className="rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl overflow-hidden transform group-hover:scale-105 transition-all duration-700 min-h-[300px] sm:min-h-[400px] lg:min-h-[500px]"
                       style={{
                         aspectRatio: '4/5',
                         backgroundImage: "url('/images/klaudia-profile.jpg')",
                         backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        minHeight: '300px',
-                        '@media (min-width: 640px)': {
-                          minHeight: '400px'
-                        },
-                        '@media (min-width: 1024px)': {
-                          minHeight: '500px'
-                        }
+                        backgroundPosition: 'center'
                       }}
                     >
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -437,19 +430,12 @@ export default function AboutPage() {
                   {/* Profile image container */}
                   <div className="relative">
                     <div 
-                      className="rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl overflow-hidden transform group-hover:scale-105 transition-all duration-700"
+                      className="rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl overflow-hidden transform group-hover:scale-105 transition-all duration-700 min-h-[300px] sm:min-h-[400px] lg:min-h-[500px]"
                       style={{
                         aspectRatio: '4/5',
                         backgroundImage: "url('/images/adrian-profile.jpg')",
                         backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        minHeight: '300px',
-                        '@media (min-width: 640px)': {
-                          minHeight: '400px'
-                        },
-                        '@media (min-width: 1024px)': {
-                          minHeight: '500px'
-                        }
+                        backgroundPosition: 'center'
                       }}
                     >
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
