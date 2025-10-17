@@ -8,19 +8,19 @@ import { useCartStore } from '@/lib/store'
 const courses = [
   {
     id: 1,
-    title: 'Bachata Fundamentals',
-    description: 'Master the essential steps, timing, and basic movements of Bachata. Perfect for complete beginners who want to build a strong foundation.',
-    level: 'Beginner',
-    duration: '8 weeks',
-    price: 149,
-    image: 'https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=1200&h=600&fit=crop',
-    lessons: 24,
-    rating: 4.9,
-    students: 1250,
-    instructor: 'Klau & Ros',
-    language: 'English, Spanish',
+    title: 'Men Style',
+    description: 'Master masculine styling, body isolation, and musical expression with Adrian Ros',
+    level: 'All Levels',
+    duration: '24/7 Access',
+    price: 29.99,
+    image: '/images/men-style-course.jpg',
+    lessons: 20,
+    rating: 5.0,
+    students: 850,
+    instructor: 'Adrian Ros',
+    category: 'ONLINE CLASSES',
     includes: [
-      '24 video lessons',
+      '20 video lessons',
       'Lifetime access',
       'Certificate of completion',
       'Student community access',
@@ -28,28 +28,155 @@ const courses = [
       'Downloadable resources'
     ],
     curriculum: [
-      { module: 'Introduction to Bachata', lessons: 3 },
-      { module: 'Basic Steps & Timing', lessons: 4 },
-      { module: 'Leading & Following Basics', lessons: 3 },
-      { module: 'Essential Turn Patterns', lessons: 4 },
-      { module: 'Body Movement Fundamentals', lessons: 4 },
-      { module: 'Simple Combinations', lessons: 4 },
-      { module: 'Musicality Basics', lessons: 2 }
+      { module: 'Introduction to Men Style', lessons: 3 },
+      { module: 'Body Isolation Techniques', lessons: 4 },
+      { module: 'Musical Expression', lessons: 3 },
+      { module: 'Advanced Styling', lessons: 4 },
+      { module: 'Partner Connection', lessons: 3 },
+      { module: 'Performance Techniques', lessons: 3 }
     ]
   },
   {
     id: 2,
-    title: 'Sensual Bachata Techniques',
-    description: 'Learn elegant body movements, rolls, and connection techniques that define sensual bachata.',
+    title: 'Partnerwork',
+    description: 'Learn connection, leading/following techniques and partner dynamics with Klau y Ros',
+    level: 'All Levels',
+    duration: '24/7 Access',
+    price: 29.99,
+    image: '/images/partnerwork-course.jpg',
+    lessons: 25,
+    rating: 5.0,
+    students: 1200,
+    instructor: 'Klau y Ros',
+    category: 'ONLINE CLASSES',
+    includes: [
+      '25 video lessons',
+      'Lifetime access',
+      'Certificate of completion',
+      'Student community access',
+      'Practice music playlist',
+      'Downloadable resources'
+    ],
+    curriculum: [
+      { module: 'Introduction to Partnerwork', lessons: 3 },
+      { module: 'Leading Techniques', lessons: 5 },
+      { module: 'Following Techniques', lessons: 5 },
+      { module: 'Connection Dynamics', lessons: 4 },
+      { module: 'Turn Patterns', lessons: 4 },
+      { module: 'Advanced Combinations', lessons: 4 }
+    ]
+  },
+  {
+    id: 3,
+    title: 'Lady Style',
+    description: 'Develop feminine styling, body control, and elegance with Klaudia Perdek',
+    level: 'All Levels',
+    duration: '24/7 Access',
+    price: 29.99,
+    image: '/images/lady-style-course.jpg',
+    lessons: 22,
+    rating: 5.0,
+    students: 980,
+    instructor: 'Klaudia Perdek',
+    category: 'ONLINE CLASSES',
+    includes: [
+      '22 video lessons',
+      'Lifetime access',
+      'Certificate of completion',
+      'Student community access',
+      'Practice music playlist',
+      'Downloadable resources'
+    ],
+    curriculum: [
+      { module: 'Introduction to Lady Style', lessons: 3 },
+      { module: 'Feminine Body Movement', lessons: 4 },
+      { module: 'Elegant Styling', lessons: 4 },
+      { module: 'Body Control', lessons: 4 },
+      { module: 'Expression Techniques', lessons: 4 },
+      { module: 'Performance Style', lessons: 3 }
+    ]
+  },
+  {
+    id: 4,
+    title: 'Vuela Teams',
+    description: 'Join the exclusive Vuela Bootcamp Teams program with Klau y Ros and represent your city on the global stage',
+    level: 'Advanced',
+    duration: 'Bootcamp Program',
+    price: 650,
+    originalPrice: 800,
+    image: '/images/vuela-teams-course.jpg',
+    lessons: 50,
+    rating: 5.0,
+    students: 120,
+    instructor: 'Klau y Ros',
+    category: 'KR TEAMS',
+    badge: 'NEW TEAMS',
+    includes: [
+      '50 video lessons',
+      'Lifetime access',
+      'Certificate of completion',
+      'Student community access',
+      'Practice music playlist',
+      'Downloadable resources',
+      'Team choreography',
+      'Performance opportunities'
+    ],
+    curriculum: [
+      { module: 'Team Introduction', lessons: 5 },
+      { module: 'Choreography Basics', lessons: 8 },
+      { module: 'Advanced Techniques', lessons: 10 },
+      { module: 'Performance Skills', lessons: 8 },
+      { module: 'Team Dynamics', lessons: 7 },
+      { module: 'Competition Prep', lessons: 6 },
+      { module: 'Final Performance', lessons: 6 }
+    ]
+  },
+  {
+    id: 5,
+    title: "Viejo Oeste Lady's Team",
+    description: 'Exclusive ladies team choreography program with Klaudia Perdek focusing on powerful feminine expression',
     level: 'Intermediate',
-    duration: '10 weeks',
-    price: 199,
-    image: 'https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?w=1200&h=600&fit=crop',
+    duration: 'Team Program',
+    price: 500,
+    image: '/images/viejo-oeste-course.jpg',
+    lessons: 35,
+    rating: 5.0,
+    students: 85,
+    instructor: 'Klaudia Perdek',
+    category: 'KR TEAMS',
+    includes: [
+      '35 video lessons',
+      'Lifetime access',
+      'Certificate of completion',
+      'Student community access',
+      'Practice music playlist',
+      'Downloadable resources',
+      'Team choreography',
+      'Performance opportunities'
+    ],
+    curriculum: [
+      { module: 'Team Introduction', lessons: 4 },
+      { module: 'Feminine Power', lessons: 6 },
+      { module: 'Choreography Development', lessons: 8 },
+      { module: 'Performance Techniques', lessons: 6 },
+      { module: 'Team Building', lessons: 5 },
+      { module: 'Final Choreography', lessons: 6 }
+    ]
+  },
+  {
+    id: 6,
+    title: 'Niveles Choreo',
+    description: 'Master the complete Niveles choreography with Klau y Ros, featuring dynamic moves and musicality',
+    level: 'All Levels',
+    duration: 'Full Choreography',
+    price: 350,
+    originalPrice: 800,
+    image: '/images/niveles-course.jpg',
     lessons: 30,
     rating: 5.0,
-    students: 890,
-    instructor: 'Klau & Ros',
-    language: 'English, Spanish',
+    students: 450,
+    instructor: 'Klau y Ros',
+    category: 'CHOREOGRAPHY',
     includes: [
       '30 video lessons',
       'Lifetime access',
@@ -57,16 +184,15 @@ const courses = [
       'Student community access',
       'Practice music playlist',
       'Downloadable resources',
-      'Weekly live Q&A sessions'
+      'Complete choreography'
     ],
     curriculum: [
-      { module: 'Introduction to Sensual Bachata', lessons: 3 },
-      { module: 'Body Rolls & Waves', lessons: 5 },
-      { module: 'Close Connection Techniques', lessons: 4 },
-      { module: 'Hip Movement & Styling', lessons: 5 },
-      { module: 'Advanced Isolations', lessons: 4 },
-      { module: 'Sensual Turn Patterns', lessons: 5 },
-      { module: 'Musical Interpretation', lessons: 4 }
+      { module: 'Choreography Introduction', lessons: 4 },
+      { module: 'Basic Moves', lessons: 6 },
+      { module: 'Intermediate Steps', lessons: 6 },
+      { module: 'Advanced Techniques', lessons: 6 },
+      { module: 'Musicality', lessons: 4 },
+      { module: 'Final Choreography', lessons: 4 }
     ]
   }
 ]
@@ -88,9 +214,9 @@ export default function CourseDetailPage() {
   }
 
   return (
-    <div className="pt-20">
+    <div className="pt-20" style={{ background: 'linear-gradient(180deg, #330F95 0%, #1a0a4e 50%, #000000 100%)' }}>
       {/* Hero Section */}
-      <section className="relative min-h-[500px] overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <section className="relative min-h-[500px] overflow-hidden bg-gradient-to-br from-purple-900 via-purple-950 to-black">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <div
@@ -150,24 +276,24 @@ export default function CourseDetailPage() {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-black/40">
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2">
             {/* What You'll Learn */}
             <section className="mb-12 animate-slide-in-left">
-              <h2 className="text-4xl font-extrabold mb-8 gradient-text font-display">What You'll Learn</h2>
+              <h2 className="text-4xl font-extrabold mb-8 text-white font-display">What You'll Learn</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {course.includes.map((item, index) => (
                   <div 
                     key={index} 
-                    className="flex items-start gap-3 bg-gradient-to-br from-white to-gray-50 p-4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100"
+                    className="flex items-start gap-3 bg-white/10 backdrop-blur-md p-4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-white/20"
                     style={{ animationDelay: `${index * 0.05}s` }}
                   >
                     <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-primary-600 to-pink-600 rounded-full flex items-center justify-center">
                       <FaCheck className="text-white text-xs" />
                     </div>
-                    <span className="text-gray-700 font-medium">{item}</span>
+                    <span className="text-gray-200 font-medium">{item}</span>
                   </div>
                 ))}
               </div>
@@ -175,12 +301,12 @@ export default function CourseDetailPage() {
 
             {/* Course Curriculum */}
             <section className="mb-12 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <h2 className="text-4xl font-extrabold mb-8 gradient-text font-display">Course Curriculum</h2>
+              <h2 className="text-4xl font-extrabold mb-8 text-white font-display">Course Curriculum</h2>
               <div className="space-y-3">
                 {course.curriculum.map((item, index) => (
                   <div 
                     key={index} 
-                    className="group bg-gradient-to-br from-white to-gray-50 rounded-2xl border border-gray-200 p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-primary-200"
+                    className="group bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-purple-400"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-5">
@@ -188,17 +314,17 @@ export default function CourseDetailPage() {
                           {index + 1}
                         </div>
                         <div>
-                          <h3 className="font-bold text-lg mb-1 text-gray-900 group-hover:text-primary-600 transition-colors">
+                          <h3 className="font-bold text-lg mb-1 text-white group-hover:text-purple-300 transition-colors">
                             {item.module}
                           </h3>
-                          <div className="flex items-center gap-2 text-sm text-gray-600">
-                            <FaBook className="text-primary-600" />
+                          <div className="flex items-center gap-2 text-sm text-gray-300">
+                            <FaBook className="text-purple-400" />
                             <span>{item.lessons} lessons</span>
                           </div>
                         </div>
                       </div>
-                      <div className="bg-primary-50 p-3 rounded-xl group-hover:bg-primary-100 transition-colors">
-                        <FaPlay className="text-primary-600 group-hover:scale-110 transition-transform" />
+                      <div className="bg-purple-500/20 p-3 rounded-xl group-hover:bg-purple-500/30 transition-colors">
+                        <FaPlay className="text-purple-400 group-hover:scale-110 transition-transform" />
                       </div>
                     </div>
                   </div>
@@ -208,8 +334,8 @@ export default function CourseDetailPage() {
 
             {/* About Instructor */}
             <section className="mb-12 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <h2 className="text-4xl font-extrabold mb-8 gradient-text font-display">Your Instructors</h2>
-              <div className="bg-gradient-to-br from-primary-50 via-pink-50 to-purple-50 rounded-3xl border-2 border-white shadow-xl p-8 relative overflow-hidden">
+              <h2 className="text-4xl font-extrabold mb-8 text-white font-display">Your Instructors</h2>
+              <div className="bg-white/10 backdrop-blur-md rounded-3xl border-2 border-white/20 shadow-xl p-8 relative overflow-hidden">
                 {/* Decorative elements */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary-200 rounded-full filter blur-3xl opacity-30"></div>
                 <div className="absolute bottom-0 left-0 w-32 h-32 bg-pink-200 rounded-full filter blur-3xl opacity-30"></div>
@@ -220,33 +346,33 @@ export default function CourseDetailPage() {
                       💃🕺
                     </div>
                     <div>
-                      <h3 className="text-3xl font-bold font-display gradient-text">{course.instructor}</h3>
-                      <p className="text-sm text-gray-600 font-medium">World-Class Bachata Instructors</p>
+                      <h3 className="text-3xl font-bold font-display text-white">{course.instructor}</h3>
+                      <p className="text-sm text-gray-300 font-medium">World-Class Bachata Instructors</p>
                     </div>
                   </div>
                   
-                  <p className="text-gray-700 mb-4 leading-relaxed">
+                  <p className="text-gray-200 mb-4 leading-relaxed">
                     Klau & Ros are internationally renowned Bachata dancers and instructors with over 15 years of teaching experience. 
                     They have performed and taught in over 50 countries and have trained thousands of students worldwide.
                   </p>
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="text-gray-200 leading-relaxed">
                     Their passion for Bachata and commitment to excellence in teaching has made them one of the most sought-after 
                     instructors in the Latin dance community.
                   </p>
 
                   {/* Stats */}
                   <div className="grid grid-cols-3 gap-4 mt-6">
-                    <div className="bg-white/70 backdrop-blur-sm rounded-xl p-4 text-center shadow-md">
-                      <div className="text-2xl font-bold gradient-text font-display">15+</div>
-                      <div className="text-xs text-gray-600 font-medium">Years</div>
+                    <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 text-center shadow-md">
+                      <div className="text-2xl font-bold text-white font-display">15+</div>
+                      <div className="text-xs text-gray-300 font-medium">Years</div>
                     </div>
-                    <div className="bg-white/70 backdrop-blur-sm rounded-xl p-4 text-center shadow-md">
-                      <div className="text-2xl font-bold gradient-text font-display">50+</div>
-                      <div className="text-xs text-gray-600 font-medium">Countries</div>
+                    <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 text-center shadow-md">
+                      <div className="text-2xl font-bold text-white font-display">50+</div>
+                      <div className="text-xs text-gray-300 font-medium">Countries</div>
                     </div>
-                    <div className="bg-white/70 backdrop-blur-sm rounded-xl p-4 text-center shadow-md">
-                      <div className="text-2xl font-bold gradient-text font-display">10K+</div>
-                      <div className="text-xs text-gray-600 font-medium">Students</div>
+                    <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 text-center shadow-md">
+                      <div className="text-2xl font-bold text-white font-display">10K+</div>
+                      <div className="text-xs text-gray-300 font-medium">Students</div>
                     </div>
                   </div>
                 </div>
@@ -257,18 +383,18 @@ export default function CourseDetailPage() {
           {/* Sidebar - Purchase Card */}
           <div className="lg:col-span-1">
             <div className="sticky top-24 animate-slide-in-right">
-              <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-2xl p-8 border-2 border-gray-100 overflow-hidden relative">
+              <div className="bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl p-8 border-2 border-white/20 overflow-hidden relative">
                 {/* Decorative corner element */}
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-primary-600 to-pink-600 rounded-full opacity-10"></div>
                 
                 <div className="relative z-10">
                   {/* Price */}
                   <div className="mb-6 text-center">
-                    <div className="text-sm text-gray-500 font-medium uppercase tracking-wider mb-2">Course Price</div>
-                    <div className="text-5xl font-extrabold gradient-text font-display mb-2">
+                    <div className="text-sm text-gray-400 font-medium uppercase tracking-wider mb-2">Course Price</div>
+                    <div className="text-5xl font-extrabold text-white font-display mb-2">
                       ${course.price}
                     </div>
-                    <div className="text-sm text-gray-600">One-time payment • Lifetime access</div>
+                    <div className="text-sm text-gray-300">One-time payment • Lifetime access</div>
                   </div>
                   
                   {/* Action Buttons */}
@@ -291,34 +417,34 @@ export default function CourseDetailPage() {
                   </div>
 
                   {/* Course Includes */}
-                  <div className="bg-gradient-to-br from-primary-50 to-pink-50 rounded-2xl p-6 mb-6">
-                    <h4 className="font-bold text-lg mb-4 text-gray-900">This course includes:</h4>
+                  <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 mb-6">
+                    <h4 className="font-bold text-lg mb-4 text-white">This course includes:</h4>
                     <ul className="space-y-3">
-                      <li className="flex items-center gap-3 text-gray-700">
+                      <li className="flex items-center gap-3 text-gray-200">
                         <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
                           <FaBook className="text-white text-sm" />
                         </div>
                         <span className="font-medium">{course.lessons} video lessons</span>
                       </li>
-                      <li className="flex items-center gap-3 text-gray-700">
+                      <li className="flex items-center gap-3 text-gray-200">
                         <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
                           <FaClock className="text-white text-sm" />
                         </div>
                         <span className="font-medium">{course.duration} of content</span>
                       </li>
-                      <li className="flex items-center gap-3 text-gray-700">
+                      <li className="flex items-center gap-3 text-gray-200">
                         <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
                           <FaInfinity className="text-white text-sm" />
                         </div>
                         <span className="font-medium">Lifetime access</span>
                       </li>
-                      <li className="flex items-center gap-3 text-gray-700">
+                      <li className="flex items-center gap-3 text-gray-200">
                         <div className="w-8 h-8 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
                           <FaCertificate className="text-white text-sm" />
                         </div>
                         <span className="font-medium">Certificate of completion</span>
                       </li>
-                      <li className="flex items-center gap-3 text-gray-700">
+                      <li className="flex items-center gap-3 text-gray-200">
                         <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
                           <FaGlobe className="text-white text-sm" />
                         </div>

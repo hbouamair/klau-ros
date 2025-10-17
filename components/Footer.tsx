@@ -1,49 +1,47 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { FaFacebook, FaInstagram, FaYoutube, FaTiktok, FaGraduationCap, FaHeart, FaEnvelope, FaQuestionCircle, FaLifeRing, FaShieldAlt, FaFileAlt, FaUndo, FaPaperPlane, FaCrown, FaStar, FaFire } from 'react-icons/fa'
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-64 sm:w-96 h-64 sm:h-96 bg-primary-600 rounded-full filter blur-3xl opacity-10"></div>
-        <div className="absolute bottom-0 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-pink-600 rounded-full filter blur-3xl opacity-10"></div>
-      </div>
+    <footer className="relative bg-gray-900 text-white overflow-hidden">
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
           {/* About - Responsive */}
           <div className="sm:col-span-2 lg:col-span-1">
             {/* Logo with Icon */}
-            <div className="flex items-center gap-2.5 sm:gap-3 mb-4">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-primary-600 via-red-600 to-pink-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl transform hover:scale-110 hover:rotate-3 transition-all duration-300 group flex-shrink-0">
-                <FaCrown className="text-white text-xl sm:text-2xl group-hover:animate-pulse" />
-              </div>
-              <div>
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold font-display bg-gradient-to-r from-primary-400 via-red-400 to-pink-400 bg-clip-text text-transparent leading-normal">
-                  Klau <span className="text-lg sm:text-xl font-light">&</span> Ros
-                </h3>
-                <p className="text-xs text-gray-400 font-semibold tracking-widest uppercase flex items-center gap-1">
-                  <FaStar className="text-yellow-400 text-xs" />
-                  Endless Academy
-                </p>
-              </div>
+            <div className="mb-4">
+              <Link href="/" className="inline-block hover:opacity-80 transition-opacity duration-300">
+                <Image
+                  src="/images/klau-ros-logo.png"
+                  alt="Klau & Ros - Endless Academy"
+                  width={160}
+                  height={53}
+                  className="h-10 sm:h-12 w-auto"
+                  priority
+                />
+              </Link>
+              <p className="text-xs text-gray-400 font-semibold tracking-widest uppercase flex items-center gap-1 mt-2">
+                <FaStar className="text-yellow-400 text-xs" />
+                Endless Academy
+              </p>
             </div>
             <p className="text-gray-400 mb-5 sm:mb-6 leading-relaxed font-light text-sm sm:text-base">
               Learn Bachata with world-renowned instructors. 24/7 access to premium dance courses.
             </p>
             <div className="flex flex-wrap gap-2.5 sm:space-x-3 sm:gap-0">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="group">
+              <a href="https://web.facebook.com/adrianrosbachataspain/?_rdc=1&_rdr#" target="_blank" rel="noopener noreferrer" className="group">
                 <div className="w-11 h-11 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 shadow-lg">
                   <FaFacebook className="text-lg sm:text-xl text-white" />
                 </div>
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="group">
+              <a href="https://www.instagram.com/klauyros" target="_blank" rel="noopener noreferrer" className="group">
                 <div className="w-11 h-11 sm:w-12 sm:h-12 bg-gradient-to-br from-pink-600 to-purple-700 hover:from-pink-700 hover:to-purple-800 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 shadow-lg">
                   <FaInstagram className="text-lg sm:text-xl text-white" />
                 </div>
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="group">
+              <a href="https://www.youtube.com/@klauyros" target="_blank" rel="noopener noreferrer" className="group">
                 <div className="w-11 h-11 sm:w-12 sm:h-12 bg-gradient-to-br from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 shadow-lg">
                   <FaYoutube className="text-lg sm:text-xl text-white" />
                 </div>
@@ -118,7 +116,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="flex items-center gap-2.5 sm:gap-3 text-gray-400 hover:text-white transition-all duration-300 group text-sm sm:text-base">
+                <Link href="/privacy-policy" className="flex items-center gap-2.5 sm:gap-3 text-gray-400 hover:text-white transition-all duration-300 group text-sm sm:text-base">
                   <div className="w-6 h-6 sm:w-7 sm:h-7 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md flex-shrink-0">
                     <FaShieldAlt className="text-xs text-white" />
                   </div>

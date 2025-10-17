@@ -2,10 +2,11 @@
 
 ## Font System
 
-- **Primary Font**: Plus Jakarta Sans (clean, modern sans-serif for body text)
-- **Display Font**: Playfair Display (elegant serif for headings)
-- Use `font-display` class for all major headings
+- **Primary Font**: Poppins (modern, geometric sans-serif)
+- **Display Font**: Poppins (same for consistency)
+- Use `font-display` class for all major headings and titles
 - Use `font-sans` (default) for body text
+- Poppins weights available: 300 (Light), 400 (Regular), 500 (Medium), 600 (Semibold), 700 (Bold), 800 (Extrabold), 900 (Black)
 
 ## Design Principles
 

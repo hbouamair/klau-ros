@@ -61,12 +61,11 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="pt-20 min-h-screen relative overflow-hidden">
+    <div className="pt-20 min-h-screen relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #330F95 0%, #1a0a4e 50%, #000000 100%)' }}>
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-primary-50"></div>
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-20 left-10 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
       {showSuccess && (
@@ -82,10 +81,10 @@ export default function DashboardPage() {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 animate-fade-in">
           <div>
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-3 gradient-text font-display">
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-3 text-white font-display">
               Welcome back, {user?.name}!
             </h1>
-            <p className="text-xl text-gray-600 font-light">Continue your Bachata learning journey</p>
+            <p className="text-xl text-gray-300 font-light">Continue your Bachata learning journey</p>
           </div>
           <button
             onClick={handleLogout}
@@ -97,44 +96,44 @@ export default function DashboardPage() {
 
         {/* Stats */}
         <div className="grid md:grid-cols-4 gap-6 mb-12">
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 animate-fade-in">
-            <div className="w-16 h-16 bg-gradient-to-br from-primary-600 to-pink-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+          <div className="bg-gradient-to-br from-white/10 via-white/5 to-purple-500/20 backdrop-blur-lg rounded-2xl shadow-xl hover:shadow-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 border-2 border-purple-400/40 hover:border-purple-300 animate-fade-in">
+            <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
               <FaBook className="text-3xl text-white" />
             </div>
-            <div className="text-4xl font-extrabold mb-2 gradient-text font-display">{purchasedCourses.length}</div>
-            <div className="text-gray-600 font-semibold">Active Courses</div>
+            <div className="text-4xl font-extrabold mb-2 text-white font-display">{purchasedCourses.length}</div>
+            <div className="text-gray-300 font-semibold">Active Courses</div>
           </div>
           
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 border-2 border-white/20 hover:border-purple-400/50 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-400 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
               <FaCheckCircle className="text-3xl text-white" />
             </div>
-            <div className="text-4xl font-extrabold mb-2 gradient-text font-display">17</div>
-            <div className="text-gray-600 font-semibold">Lessons Completed</div>
+            <div className="text-4xl font-extrabold mb-2 text-white font-display">17</div>
+            <div className="text-gray-300 font-semibold">Lessons Completed</div>
           </div>
           
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 border-2 border-white/20 hover:border-purple-400/50 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-300 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
               <FaClock className="text-3xl text-white" />
             </div>
-            <div className="text-4xl font-extrabold mb-2 gradient-text font-display">12.5h</div>
-            <div className="text-gray-600 font-semibold">Learning Time</div>
+            <div className="text-4xl font-extrabold mb-2 text-white font-display">12.5h</div>
+            <div className="text-gray-300 font-semibold">Learning Time</div>
           </div>
           
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 border-2 border-white/20 hover:border-purple-400/50 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <div className="w-16 h-16 bg-gradient-to-br from-purple-300 to-purple-200 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
               <FaAward className="text-3xl text-white" />
             </div>
-            <div className="text-4xl font-extrabold mb-2 gradient-text font-display">2</div>
-            <div className="text-gray-600 font-semibold">Achievements</div>
+            <div className="text-4xl font-extrabold mb-2 text-white font-display">2</div>
+            <div className="text-gray-300 font-semibold">Achievements</div>
           </div>
         </div>
 
         {/* My Courses */}
         <section className="mb-16 animate-fade-in" style={{ animationDelay: '0.4s' }}>
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-4xl font-extrabold gradient-text font-display">My Courses</h2>
-            <Link href="/courses" className="text-primary-600 hover:text-primary-700 font-bold flex items-center gap-2 group">
+            <h2 className="text-4xl font-extrabold text-white font-display">My Courses</h2>
+            <Link href="/courses" className="text-purple-400 hover:text-purple-300 font-bold flex items-center gap-2 group">
               Browse More Courses
               <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
             </Link>

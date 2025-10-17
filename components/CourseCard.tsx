@@ -12,13 +12,17 @@ interface Course {
   lessons: number
   rating: number
   students: number
+  originalPrice?: number
+  badge?: string
 }
 
 interface CourseCardProps {
   course: Course
+  originalPrice?: number
+  badge?: string
 }
 
-export default function CourseCard({ course }: CourseCardProps) {
+export default function CourseCard({ course, originalPrice, badge }: CourseCardProps) {
   // Determine level color
   const levelColors: { [key: string]: { gradient: string; badge: string; accent: string } } = {
     'Beginner': { 
@@ -47,10 +51,7 @@ export default function CourseCard({ course }: CourseCardProps) {
 
   return (
     <Link href={`/courses/${course.id}`} className="block group h-full">
-      <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full flex flex-col border-2 border-gray-100 hover:border-primary-200">
-        {/* Decorative gradient accent */}
-        <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${levelColor.gradient}`}></div>
-        
+      <div className="relative bg-gradient-to-br from-white/10 via-white/5 to-purple-500/20 backdrop-blur-lg rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full flex flex-col border-2 border-purple-400/40 hover:border-purple-300">
         {/* Image Section */}
         <div className="relative h-52 overflow-hidden flex-shrink-0 bg-gradient-to-br from-gray-100 to-gray-200">
           <div
@@ -67,81 +68,83 @@ export default function CourseCard({ course }: CourseCardProps) {
               <FaPlay className="text-2xl text-primary-600 ml-1" />
             </div>
           </div>
-          
-          {/* Level badge */}
-          <div className={`absolute top-5 left-5 ${levelColor.badge} text-white px-4 py-2 rounded-full text-sm font-bold shadow-xl transform group-hover:scale-110 transition-transform duration-300 backdrop-blur-sm`}>
-            {course.level}
-          </div>
-          
-          {/* Rating badge */}
-          <div className="absolute top-5 right-5 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-full shadow-xl flex items-center gap-1.5">
-            <FaStar className="text-yellow-400 text-sm" />
-            <span className="font-bold text-gray-900 text-sm">{course.rating}</span>
-          </div>
-          
-          {/* Students count */}
-          <div className="absolute bottom-4 left-5 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
-            <FaUsers className="text-primary-600 text-sm" />
-            <span className="font-bold text-gray-900 text-sm">{course.students.toLocaleString()}</span>
-          </div>
+
+          {/* Special badge (NEW TEAMS, etc.) */}
+          {(badge || course.badge) && (
+            <div className="absolute top-5 right-5 bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-4 py-2 rounded-full text-xs font-bold shadow-xl animate-pulse">
+              {badge || course.badge}
+            </div>
+          )}
         </div>
         
         {/* Content Section */}
-        <div className="p-6 flex flex-col flex-grow">
+        <div className="p-4 sm:p-5 md:p-6 flex flex-col flex-grow">
           {/* Title */}
-          <h3 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-primary-600 transition-colors duration-300 leading-tight font-display line-clamp-2">
+          <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-white group-hover:text-purple-300 transition-colors duration-300 leading-tight font-display line-clamp-2">
             {course.title}
           </h3>
           
           {/* Description */}
-          <p className="text-gray-600 mb-5 line-clamp-2 leading-relaxed text-[15px] flex-grow">
+          <p className="text-gray-300 mb-4 sm:mb-5 line-clamp-2 leading-relaxed text-sm sm:text-[15px] flex-grow">
             {course.description}
           </p>
           
           {/* Course info */}
-          <div className="space-y-3 mt-auto">
+          <div className="space-y-2 sm:space-y-3 mt-auto">
             {/* Duration and Lessons */}
-            <div className="grid grid-cols-2 gap-3">
-              <div className={`bg-gradient-to-br ${levelColor.accent} rounded-xl p-3.5 border border-gray-100`}>
-                <div className="flex items-center gap-2 mb-1">
-                  <FaClock className={`text-sm bg-gradient-to-r ${levelColor.gradient} bg-clip-text text-transparent`} />
-                  <span className="text-xs text-gray-500 font-semibold uppercase tracking-wide">Duration</span>
+            <div className="grid grid-cols-2 gap-2 sm:gap-3">
+              <div className={`bg-gradient-to-br ${levelColor.accent} backdrop-blur-sm rounded-xl p-2.5 sm:p-3.5 border border-purple-300/30`}>
+                <div className="flex items-center gap-1 sm:gap-2 mb-1">
+                  <FaClock className={`text-xs sm:text-sm bg-gradient-to-r ${levelColor.gradient} bg-clip-text text-transparent`} />
+                  <span className="text-[10px] sm:text-xs text-gray-400 font-semibold uppercase tracking-wide">Duration</span>
                 </div>
-                <div className="font-bold text-gray-900 text-sm">{course.duration}</div>
+                <div className="font-bold text-white text-xs sm:text-sm">{course.duration}</div>
               </div>
               
-              <div className={`bg-gradient-to-br ${levelColor.accent} rounded-xl p-3.5 border border-gray-100`}>
-                <div className="flex items-center gap-2 mb-1">
-                  <FaBook className={`text-sm bg-gradient-to-r ${levelColor.gradient} bg-clip-text text-transparent`} />
-                  <span className="text-xs text-gray-500 font-semibold uppercase tracking-wide">Lessons</span>
+              <div className={`bg-gradient-to-br ${levelColor.accent} backdrop-blur-sm rounded-xl p-2.5 sm:p-3.5 border border-purple-300/30`}>
+                <div className="flex items-center gap-1 sm:gap-2 mb-1">
+                  <FaBook className={`text-xs sm:text-sm bg-gradient-to-r ${levelColor.gradient} bg-clip-text text-transparent`} />
+                  <span className="text-[10px] sm:text-xs text-gray-400 font-semibold uppercase tracking-wide">Lessons</span>
                 </div>
-                <div className="font-bold text-gray-900 text-sm">{course.lessons} Videos</div>
+                <div className="font-bold text-white text-xs sm:text-sm">{course.lessons} Videos</div>
               </div>
             </div>
             
             {/* Lifetime access badge */}
-            <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-3 border border-amber-200/50">
+            <div className="bg-gradient-to-r from-purple-500/20 to-purple-600/20 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-purple-400/30">
               <div className="flex items-center gap-2">
-                <FaInfinity className="text-orange-600 text-lg" />
-                <span className="text-sm font-bold text-gray-900">Lifetime Access Included</span>
+                <FaInfinity className="text-purple-300 text-base sm:text-lg" />
+                <span className="text-xs sm:text-sm font-bold text-white">Lifetime Access Included</span>
               </div>
             </div>
             
             {/* Price and CTA */}
-            <div className="flex items-end justify-between pt-4 border-t-2 border-gray-100">
+            <div className="flex items-end justify-between pt-3 sm:pt-4 border-t-2 border-purple-400/30">
               <div>
-                <div className="text-xs text-gray-500 mb-1.5 font-bold uppercase tracking-widest">Price</div>
-                <div className={`text-4xl font-extrabold bg-gradient-to-r ${levelColor.gradient} bg-clip-text text-transparent font-display`}>
-                  ${course.price}
+                <div className="text-[10px] sm:text-xs text-gray-400 mb-1 sm:mb-1.5 font-bold uppercase tracking-widest">Price</div>
+                <div className="flex items-center gap-2 sm:gap-3">
+                  {(originalPrice || course.originalPrice) && (
+                    <div className="text-base sm:text-xl font-bold text-gray-500 line-through">
+                      ${originalPrice || course.originalPrice}
+                    </div>
+                  )}
+                  <div className={`text-3xl sm:text-4xl font-extrabold bg-gradient-to-r ${levelColor.gradient} bg-clip-text text-transparent font-display`}>
+                    ${course.price}
+                  </div>
                 </div>
+                {(originalPrice || course.originalPrice) && (
+                  <div className="text-[10px] sm:text-xs text-green-400 font-bold mt-1">
+                    Save ${((originalPrice || course.originalPrice!) - course.price).toFixed(0)}!
+                  </div>
+                )}
               </div>
               
-              <div className={`${levelColor.badge} text-white font-bold px-6 py-3.5 rounded-xl transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-2xl shadow-lg flex items-center gap-2 relative overflow-hidden`}>
+              <div className={`${levelColor.badge} text-white font-bold px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-xl transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-2xl shadow-lg flex items-center gap-1.5 sm:gap-2 relative overflow-hidden text-sm sm:text-base`}>
                 {/* Shine effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 
                 <span className="relative z-10 tracking-wide">Enroll</span>
-                <FaTrophy className="relative z-10 text-yellow-200" />
+                <FaTrophy className="relative z-10 text-yellow-200 text-sm sm:text-base" />
               </div>
             </div>
           </div>

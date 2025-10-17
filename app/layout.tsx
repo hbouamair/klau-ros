@@ -1,18 +1,14 @@
 import type { Metadata } from 'next'
-import { Plus_Jakarta_Sans, Playfair_Display } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import MobileBottomNav from '@/components/MobileBottomNav'
 
-const plusJakarta = Plus_Jakarta_Sans({ 
+const poppins = Poppins({
   subsets: ['latin'],
-  variable: '--font-jakarta',
-  display: 'swap',
-})
-
-const playfair = Playfair_Display({ 
-  subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-poppins',
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
   display: 'swap',
 })
 
@@ -29,12 +25,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${plusJakarta.variable} ${playfair.variable} font-sans`}>
+      <body className={`${poppins.variable} font-sans`}>
         <Navbar />
         <main className="min-h-screen">
           {children}
         </main>
         <Footer />
+        <MobileBottomNav />
       </body>
     </html>
   )

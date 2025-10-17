@@ -9,21 +9,20 @@ export default function CartPage() {
 
   if (items.length === 0) {
     return (
-      <div className="pt-20 min-h-screen relative overflow-hidden">
+      <div className="pt-20 min-h-screen relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #330F95 0%, #1a0a4e 50%, #000000 100%)' }}>
         {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-primary-50"></div>
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-20 left-10 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float" style={{ animationDelay: '2s' }}></div>
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 py-20 text-center">
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-2xl animate-scale-in">
-            <div className="w-24 h-24 bg-gradient-to-br from-primary-600 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-8 shadow-xl">
+          <div className="bg-gradient-to-br from-white/15 via-white/10 to-purple-500/20 backdrop-blur-lg rounded-3xl p-12 shadow-2xl animate-scale-in border-2 border-purple-400/40">
+            <div className="w-24 h-24 bg-gradient-to-br from-purple-600 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-8 shadow-xl">
               <FaShoppingCart className="text-4xl text-white" />
             </div>
-            <h1 className="text-5xl font-extrabold mb-6 gradient-text font-display">Your Cart is Empty</h1>
-            <p className="text-xl text-gray-600 mb-10 font-light">
+            <h1 className="text-5xl font-extrabold mb-6 text-white font-display">Your Cart is Empty</h1>
+            <p className="text-xl text-gray-300 mb-10 font-light">
               Start learning today by adding courses to your cart
             </p>
             <Link href="/courses" className="btn-primary inline-flex items-center justify-center gap-2 text-lg group">
@@ -37,23 +36,22 @@ export default function CartPage() {
   }
 
   return (
-    <div className="pt-20 min-h-screen relative overflow-hidden">
+    <div className="pt-20 min-h-screen relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #330F95 0%, #1a0a4e 50%, #000000 100%)' }}>
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-primary-50"></div>
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-20 left-10 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="mb-10 animate-fade-in">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-primary-600 to-pink-600 rounded-xl flex items-center justify-center shadow-lg">
+            <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-500 rounded-xl flex items-center justify-center shadow-lg">
               <FaShoppingCart className="text-xl text-white" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-extrabold gradient-text font-display">Shopping Cart</h1>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-white font-display">Shopping Cart</h1>
           </div>
-          <p className="text-lg text-gray-600 font-light">{items.length} {items.length === 1 ? 'course' : 'courses'} in your cart</p>
+          <p className="text-lg text-gray-300 font-light">{items.length} {items.length === 1 ? 'course' : 'courses'} in your cart</p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">

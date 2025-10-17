@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
-import { FaShoppingCart, FaUser, FaBars, FaTimes, FaHome, FaGraduationCap, FaHeart, FaEnvelope, FaStar, FaCrown } from 'react-icons/fa'
+import { FaShoppingCart, FaUser, FaBars, FaTimes, FaCrown } from 'react-icons/fa'
 import { useCartStore, useAuthStore } from '@/lib/store'
 
 export default function Navbar() {
@@ -20,215 +21,172 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  return (
-    <nav className={`fixed w-full top-0 z-50 transition-all duration-500 ${
-      scrolled 
-        ? 'bg-white/95 backdrop-blur-2xl shadow-2xl' 
-        : 'bg-gradient-to-b from-white to-gray-50/90 backdrop-blur-xl shadow-xl'
-    }`}>
-      {/* Decorative gradient line */}
-      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary-600 to-transparent opacity-50"></div>
-      
+    return (
+          <nav 
+            className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-lg' : 'shadow-md'}`}
+            style={{ background: '#330F95' }}
+          >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-20 gap-8">
           {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 group">
-            {/* Animated Badge */}
-            <div className="relative">
-              <div className={`w-10 h-10 sm:w-11 sm:h-11 rounded-2xl flex items-center justify-center shadow-lg transform transition-all duration-500 ${
-                scrolled 
-                  ? 'bg-gradient-to-br from-primary-600 to-pink-600 rotate-0' 
-                  : 'bg-gradient-to-br from-primary-500 to-pink-500 -rotate-6'
-              } group-hover:rotate-12 group-hover:scale-110`}>
-                <FaStar className="text-white text-base sm:text-lg animate-pulse" />
-              </div>
-            </div>
-            
-            <div className="relative">
-              <span className="text-2xl sm:text-3xl md:text-4xl font-bold font-display tracking-tight bg-gradient-to-r from-primary-600 via-red-600 to-pink-600 bg-clip-text text-transparent group-hover:from-primary-700 group-hover:via-red-700 group-hover:to-pink-700 transition-all duration-300">
-                Klau <span className="text-xl sm:text-2xl md:text-3xl font-light">&</span> Ros
-              </span>
-              <div className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-600 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
-            </div>
+          <Link href="/" className="flex items-center hover:opacity-80 transition-opacity duration-300">
+            <Image 
+              src="/images/klau-ros-logo.png" 
+              alt="Klau & Ros - Endless Academy" 
+              width={180}
+              height={60}
+              className="h-12 w-auto"
+              priority
+            />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
-            <Link href="/" className="group relative px-6 py-2.5 rounded-xl transition-all duration-300">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <span className="relative text-[15px] font-bold tracking-wide text-gray-700 group-hover:text-blue-600 transition-colors duration-300">
-                Home
-              </span>
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-500 group-hover:w-4/5 transition-all duration-300"></div>
-            </Link>
-            
-            <Link href="/courses" className="group relative px-6 py-2.5 rounded-xl transition-all duration-300">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-pink-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <span className="relative text-[15px] font-bold tracking-wide text-gray-700 group-hover:text-primary-600 transition-colors duration-300">
-                Courses
-              </span>
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-pink-500 group-hover:w-4/5 transition-all duration-300"></div>
-            </Link>
-            
-            <Link href="/about" className="group relative px-6 py-2.5 rounded-xl transition-all duration-300">
-              <div className="absolute inset-0 bg-gradient-to-br from-pink-50 to-red-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <span className="relative text-[15px] font-bold tracking-wide text-gray-700 group-hover:text-pink-600 transition-colors duration-300">
-                About
-              </span>
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-pink-500 to-red-500 group-hover:w-4/5 transition-all duration-300"></div>
-            </Link>
-            
-            <Link href="/contact" className="group relative px-6 py-2.5 rounded-xl transition-all duration-300">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <span className="relative text-[15px] font-bold tracking-wide text-gray-700 group-hover:text-purple-600 transition-colors duration-300">
-                Contact
-              </span>
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-indigo-500 group-hover:w-4/5 transition-all duration-300"></div>
-            </Link>
+                {/* Desktop Navigation */}
+                <div className="hidden lg:flex items-center space-x-10">
+                  <Link href="/" className="text-white hover:text-purple-300 font-medium transition-colors duration-200">
+                    Home
+                  </Link>
 
-            {/* Admin Dashboard - Only shown when logged in as admin */}
-            {user?.isAdmin && (
-              <Link href="/admin" className="group relative px-6 py-2.5 rounded-xl transition-all duration-300">
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative text-[15px] font-bold tracking-wide text-gray-700 group-hover:text-orange-600 transition-colors duration-300 flex items-center gap-2">
-                  <FaCrown className="text-yellow-500" />
-                  Admin
-                </span>
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-yellow-500 to-orange-500 group-hover:w-4/5 transition-all duration-300"></div>
-              </Link>
-            )}
+                  <Link href="/endless-academy" className="text-white hover:text-purple-300 font-medium transition-colors duration-200">
+                    Endless Academy
+                  </Link>
+
+                  <Link href="/about" className="text-white hover:text-purple-300 font-medium transition-colors duration-200">
+                    Profile
+                  </Link>
+
+                  <Link href="/courses" className="text-white hover:text-purple-300 font-medium transition-colors duration-200">
+                    My Courses
+                  </Link>
+
+                  <Link href="/stores" className="text-white hover:text-purple-300 font-medium transition-colors duration-200">
+                    Stores
+                  </Link>
+
+                  <Link href="/contact" className="text-white hover:text-purple-300 font-medium transition-colors duration-200">
+                    Contact
+                  </Link>
+                </div>
+
+          {/* Right side - Cart and Login */}
+          <div className="hidden lg:flex items-center gap-8">
+                    {/* Cart */}
+                    <Link href="/cart" className="relative text-white hover:text-purple-300 transition-colors duration-200">
+                      <FaShoppingCart className="text-xl" />
+                      {cartItems > 0 && (
+                        <span className="absolute -top-2 -right-2 bg-gradient-to-r from-purple-500 to-purple-400 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-lg">
+                          {cartItems}
+                        </span>
+                      )}
+                    </Link>
+
+                    {/* Login Button */}
+                    <Link href="/login" className="group relative overflow-hidden bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500 hover:from-purple-500 hover:via-purple-400 hover:to-pink-400 text-white font-semibold px-8 py-3 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl">
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="relative flex items-center gap-2">
+                        <FaUser className="text-sm group-hover:scale-105 transition-transform duration-300" />
+                        <span className="group-hover:tracking-wider transition-all duration-300">Log In</span>
+                        <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      </div>
+                    </Link>
           </div>
 
-          {/* Right side - Cart and User */}
-          <div className="hidden lg:flex items-center gap-2 xl:gap-3">
-            {/* Cart */}
-            <Link href="/cart" className="relative group">
-              <div className="w-10 h-10 xl:w-11 xl:h-11 bg-gradient-to-br from-orange-400 to-red-500 hover:from-orange-500 hover:to-red-600 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:rotate-6 shadow-lg hover:shadow-xl">
-                <FaShoppingCart className="text-base xl:text-lg text-white" />
-              </div>
-              {cartItems > 0 && (
-                <span className="absolute -top-2 -right-2 bg-gradient-to-br from-green-400 to-emerald-500 text-white text-xs font-extrabold rounded-full h-5 w-5 xl:h-6 xl:w-6 flex items-center justify-center shadow-xl border-2 border-white animate-bounce">
-                  {cartItems}
-                </span>
-              )}
-            </Link>
-            
-            {/* Login */}
-            <Link href="/login" className="group">
-              <div className="w-10 h-10 xl:w-11 xl:h-11 bg-gradient-to-br from-gray-600 to-gray-800 hover:from-gray-700 hover:to-gray-900 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:rotate-6 shadow-lg hover:shadow-xl">
-                <FaUser className="text-base xl:text-lg text-white" />
-              </div>
-            </Link>
-            
-            {/* Sign Up Button */}
-            <Link href="/signup" className="relative group ml-1">
-              {/* Glow effect */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary-600 via-red-600 to-pink-600 rounded-xl blur-lg opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
-              
-              {/* Button */}
-              <div className="relative bg-gradient-to-r from-primary-600 via-red-600 to-pink-600 hover:from-primary-700 hover:via-red-700 hover:to-pink-700 text-white font-bold px-5 xl:px-7 py-2.5 xl:py-3 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl flex items-center gap-2 text-sm xl:text-base">
-                <span>Sign Up</span>
-                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-              </div>
-            </Link>
-          </div>
-
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden relative group"
-          >
-            <div className="w-11 h-11 bg-gradient-to-br from-primary-600 to-pink-600 hover:from-primary-700 hover:to-pink-700 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:rotate-12 shadow-lg">
-              {isMenuOpen ? (
-                <FaTimes className="text-xl text-white" />
-              ) : (
-                <FaBars className="text-xl text-white" />
-              )}
-            </div>
-          </button>
+                {/* Mobile menu button */}
+                <button
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  className="lg:hidden text-white hover:text-purple-300 transition-colors duration-200"
+                >
+                  {isMenuOpen ? (
+                    <FaTimes className="text-2xl" />
+                  ) : (
+                    <FaBars className="text-2xl" />
+                  )}
+                </button>
         </div>
       </div>
 
       {/* Mobile menu */}
       <div className={`lg:hidden transition-all duration-300 ease-in-out ${
         isMenuOpen 
-          ? 'max-h-screen opacity-100' 
-          : 'max-h-0 opacity-0 overflow-hidden'
-      }`}>
-        <div className="bg-gradient-to-b from-white via-gray-50 to-white backdrop-blur-xl border-t-2 border-gradient-to-r from-primary-200 to-pink-200 shadow-2xl">
-          <div className="px-4 py-6 space-y-2 max-w-7xl mx-auto">
-            <Link
-              href="/"
-              className="block px-5 py-4 text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 hover:text-blue-600 rounded-xl transition-all duration-300 text-base font-bold tracking-wide"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              href="/courses"
-              className="block px-5 py-4 text-gray-700 hover:bg-gradient-to-r hover:from-primary-50 hover:to-pink-50 hover:text-primary-600 rounded-xl transition-all duration-300 text-base font-bold tracking-wide"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Courses
-            </Link>
-            <Link
-              href="/about"
-              className="block px-5 py-4 text-gray-700 hover:bg-gradient-to-r hover:from-pink-50 hover:to-red-50 hover:text-pink-600 rounded-xl transition-all duration-300 text-base font-bold tracking-wide"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-              href="/contact"
-              className="block px-5 py-4 text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-indigo-50 hover:text-purple-600 rounded-xl transition-all duration-300 text-base font-bold tracking-wide"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contact
-            </Link>
-
-            {/* Admin Dashboard - Only shown when logged in as admin */}
-            {user?.isAdmin && (
-              <Link
-                href="/admin"
-                className="flex items-center gap-3 px-5 py-4 text-gray-700 hover:bg-gradient-to-r hover:from-yellow-50 hover:to-orange-50 hover:text-orange-600 rounded-xl transition-all duration-300 text-base font-bold tracking-wide"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <FaCrown className="text-yellow-500 text-lg" />
-                Admin Dashboard
-              </Link>
-            )}
+                ? 'max-h-screen opacity-100'
+                : 'max-h-0 opacity-0 overflow-hidden'
+            }`}>
+                    <div className="border-t border-white/10 shadow-lg" style={{ background: '#2a0d7a' }}>
+                <div className="px-6 py-6 space-y-3 max-w-7xl mx-auto">
+                  <Link
+                    href="/"
+                    className="block px-4 py-3 text-white hover:bg-white/10 hover:text-purple-200 rounded-md transition-all duration-200 font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Home
+                  </Link>
+                  <Link
+                    href="/endless-academy"
+                    className="block px-4 py-3 text-white hover:bg-white/10 hover:text-purple-200 rounded-md transition-all duration-200 font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Endless Academy
+                  </Link>
+                  <Link
+                    href="/about"
+                    className="block px-4 py-3 text-white hover:bg-white/10 hover:text-purple-200 rounded-md transition-all duration-200 font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Profile
+                  </Link>
+                  <Link
+                    href="/courses"
+                    className="block px-4 py-3 text-white hover:bg-white/10 hover:text-purple-200 rounded-md transition-all duration-200 font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    My Courses
+                  </Link>
+                  <Link
+                    href="/stores"
+                    className="block px-4 py-3 text-white hover:bg-white/10 hover:text-purple-200 rounded-md transition-all duration-200 font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Stores
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="block px-4 py-3 text-white hover:bg-white/10 hover:text-purple-200 rounded-md transition-all duration-200 font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Contact
+                  </Link>
             
-            <div className="pt-4 mt-4 border-t-2 border-gray-200 space-y-2">
+            <div className="pt-6 mt-6 border-t border-purple-800 space-y-3">
               <Link
                 href="/cart"
-                className="flex items-center justify-between px-5 py-4 text-gray-700 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 hover:text-orange-600 rounded-xl transition-all duration-300 text-base font-bold tracking-wide"
+                className="flex items-center justify-between px-4 py-3 text-white hover:bg-white/10 hover:text-purple-200 rounded-md transition-all duration-200 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                <span className="flex items-center gap-3">
-                  <FaShoppingCart className="text-lg" />
-                  Shopping Cart
+                <span className="flex items-center gap-2">
+                  <FaShoppingCart />
+                  Cart
                 </span>
                 {cartItems > 0 && (
-                  <span className="bg-gradient-to-r from-green-400 to-emerald-500 text-white text-xs font-bold rounded-full h-7 w-7 flex items-center justify-center shadow-lg">
-                    {cartItems}
-                  </span>
+                        <span className="bg-gradient-to-r from-purple-500 to-purple-400 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center shadow-lg">
+                          {cartItems}
+                        </span>
                 )}
               </Link>
-              <Link
-                href="/login"
-                className="flex items-center gap-3 px-5 py-4 text-gray-700 hover:bg-gray-100 hover:text-gray-800 rounded-xl transition-all duration-300 text-base font-bold tracking-wide"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <FaUser className="text-lg" />
-                Login
-              </Link>
-              <Link
-                href="/signup"
-                className="block px-5 py-4 bg-gradient-to-r from-primary-600 via-red-600 to-pink-600 text-white hover:from-primary-700 hover:via-red-700 hover:to-pink-700 rounded-xl transition-all duration-300 font-bold text-center shadow-xl hover:shadow-2xl transform hover:scale-105 tracking-wide"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Sign Up Free
-              </Link>
+                    <Link
+                      href="/login"
+                      className="group relative overflow-hidden block px-6 py-4 bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500 hover:from-purple-500 hover:via-purple-400 hover:to-pink-400 text-white text-center rounded-2xl transition-all duration-300 font-semibold shadow-lg hover:shadow-xl"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="relative flex items-center justify-center gap-2">
+                        <FaUser className="text-sm group-hover:scale-105 transition-transform duration-300" />
+                        <span className="group-hover:tracking-wider transition-all duration-300">Log In</span>
+                        <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      </div>
+                    </Link>
             </div>
           </div>
         </div>

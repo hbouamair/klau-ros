@@ -70,6 +70,10 @@ interface AdminCourse {
   lessons: number
   rating: number
   students: number
+  originalPrice?: number
+  badge?: string
+  instructor?: string
+  category?: string
 }
 
 interface AdminClient {
@@ -166,39 +170,90 @@ export const useAdminStore = create<AdminState>()(
       courses: [
         {
           id: 1,
-          title: 'Bachata Fundamentals',
-          description: 'Master the essential steps, timing, and basic movements of Bachata. Perfect for complete beginners.',
-          level: 'Beginner',
-          duration: '8 weeks',
-          price: 149,
-          image: 'https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=800&h=600&fit=crop',
-          lessons: 24,
-          rating: 4.9,
-          students: 1250
+          title: 'Men Style',
+          description: 'Master masculine styling, body isolation, and musical expression with Adrian Ros',
+          level: 'All Levels',
+          duration: '24/7 Access',
+          price: 29.99,
+          image: '/images/men-style-course.jpg',
+          lessons: 20,
+          rating: 5.0,
+          students: 850,
+          instructor: 'Adrian Ros',
+          category: 'ONLINE CLASSES'
         },
         {
           id: 2,
-          title: 'Sensual Bachata Techniques',
-          description: 'Learn elegant body movements, rolls, and connection techniques that define sensual bachata.',
-          level: 'Intermediate',
-          duration: '10 weeks',
-          price: 199,
-          image: 'https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?w=800&h=600&fit=crop',
-          lessons: 30,
+          title: 'Partnerwork',
+          description: 'Learn connection, leading/following techniques and partner dynamics with Klau y Ros',
+          level: 'All Levels',
+          duration: '24/7 Access',
+          price: 29.99,
+          image: '/images/partnerwork-course.jpg',
+          lessons: 25,
           rating: 5.0,
-          students: 890
+          students: 1200,
+          instructor: 'Klau y Ros',
+          category: 'ONLINE CLASSES'
         },
         {
           id: 3,
-          title: 'Advanced Partnering & Musicality',
-          description: 'Perfect your connection, leading/following, and musical interpretation at an advanced level.',
+          title: 'Lady Style',
+          description: 'Develop feminine styling, body control, and elegance with Klaudia Perdek',
+          level: 'All Levels',
+          duration: '24/7 Access',
+          price: 29.99,
+          image: '/images/lady-style-course.jpg',
+          lessons: 22,
+          rating: 5.0,
+          students: 980,
+          instructor: 'Klaudia Perdek',
+          category: 'ONLINE CLASSES'
+        },
+        {
+          id: 4,
+          title: 'Vuela Teams',
+          description: 'Join the exclusive Vuela Bootcamp Teams program with Klau y Ros and represent your city on the global stage',
           level: 'Advanced',
-          duration: '12 weeks',
-          price: 249,
-          image: 'https://images.unsplash.com/photo-1545128485-c400e7702796?w=800&h=600&fit=crop',
-          lessons: 36,
-          rating: 4.9,
-          students: 645
+          duration: 'Bootcamp Program',
+          price: 650,
+          originalPrice: 800,
+          image: '/images/vuela-teams-course.jpg',
+          lessons: 50,
+          rating: 5.0,
+          students: 120,
+          instructor: 'Klau y Ros',
+          category: 'KR TEAMS',
+          badge: 'NEW TEAMS'
+        },
+        {
+          id: 5,
+          title: "Viejo Oeste Lady's Team",
+          description: 'Exclusive ladies team choreography program with Klaudia Perdek focusing on powerful feminine expression',
+          level: 'Intermediate',
+          duration: 'Team Program',
+          price: 500,
+          image: '/images/viejo-oeste-course.jpg',
+          lessons: 35,
+          rating: 5.0,
+          students: 85,
+          instructor: 'Klaudia Perdek',
+          category: 'KR TEAMS'
+        },
+        {
+          id: 6,
+          title: 'Niveles Choreo',
+          description: 'Master the complete Niveles choreography with Klau y Ros, featuring dynamic moves and musicality',
+          level: 'All Levels',
+          duration: 'Full Choreography',
+          price: 350,
+          originalPrice: 800,
+          image: '/images/niveles-course.jpg',
+          lessons: 30,
+          rating: 5.0,
+          students: 450,
+          instructor: 'Klau y Ros',
+          category: 'CHOREOGRAPHY'
         }
       ],
       clients: [

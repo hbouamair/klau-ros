@@ -35,13 +35,13 @@ export default function LoginPage() {
   return (
     <div className="pt-20 min-h-screen relative overflow-hidden">
       {/* Animated background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50"></div>
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, #330F95 0%, #1a0a4e 50%, #000000 100%)' }}></div>
       
       {/* Floating blobs */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
-        <div className="absolute top-40 right-10 w-[500px] h-[500px] bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute -bottom-32 left-1/3 w-[600px] h-[600px] bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-20 left-10 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float"></div>
+        <div className="absolute top-40 right-10 w-[500px] h-[500px] bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute -bottom-32 left-1/3 w-[600px] h-[600px] bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float" style={{ animationDelay: '4s' }}></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-12">
@@ -50,17 +50,17 @@ export default function LoginPage() {
           <div className="text-center lg:text-left animate-slide-in-left">
             <div className="mb-8">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold font-display leading-none mb-4">
-                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 bg-clip-text text-transparent">
                   Welcome Back
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-700 font-light mb-2">
+              <p className="text-xl md:text-2xl text-gray-300 font-light mb-2">
                 Continue Your Bachata Journey
               </p>
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-pink-600 mx-auto lg:mx-0"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-purple-600 mx-auto lg:mx-0"></div>
             </div>
 
-            <p className="text-lg text-gray-600 mb-8 max-w-md mx-auto lg:mx-0">
+            <p className="text-lg text-gray-300 mb-8 max-w-md mx-auto lg:mx-0">
               Log in to access your courses, track your progress, and continue learning with Klau & Ros.
             </p>
 
@@ -99,7 +99,7 @@ export default function LoginPage() {
           <div className="animate-slide-in-right">
             <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-8 md:p-10 border border-white/20">
               <div className="text-center mb-8">
-                <div className="inline-block p-4 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-2xl shadow-lg mb-4 animate-float">
+                <div className="inline-block p-4 bg-gradient-to-br from-purple-600 to-purple-400 rounded-2xl shadow-lg mb-4 animate-float">
                   <FaSignInAlt className="text-4xl text-white" />
                 </div>
                 <h2 className="text-3xl font-bold font-display mb-2">Login to Your Account</h2>

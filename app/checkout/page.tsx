@@ -25,10 +25,9 @@ export default function CheckoutPage() {
 
   if (!isAuthenticated) {
     return (
-      <div className="pt-20 min-h-screen relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-primary-50"></div>
+      <div className="pt-20 min-h-screen relative overflow-hidden bg-gradient-to-b from-purple-900 via-purple-950 to-black">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
+          <div className="absolute top-20 left-10 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float"></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 py-20 text-center">
           <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-2xl animate-scale-in">
@@ -36,7 +35,7 @@ export default function CheckoutPage() {
               <FaLock className="text-3xl text-white" />
             </div>
             <h1 className="text-4xl font-extrabold mb-4 gradient-text font-display">Please Log In</h1>
-            <p className="text-xl text-gray-600 mb-8 font-light">
+            <p className="text-xl text-gray-300 mb-8 font-light">
               You need to be logged in to complete your purchase
             </p>
             <Link href="/login" className="btn-primary inline-flex items-center justify-center gap-2 text-lg">
@@ -50,14 +49,13 @@ export default function CheckoutPage() {
 
   if (items.length === 0) {
     return (
-      <div className="pt-20 min-h-screen relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-primary-50"></div>
+      <div className="pt-20 min-h-screen relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #330F95 0%, #1a0a4e 50%, #000000 100%)' }}>
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
+          <div className="absolute top-20 left-10 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float"></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 py-20 text-center">
           <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-2xl animate-scale-in">
-            <h1 className="text-4xl font-extrabold mb-4 gradient-text font-display">Your Cart is Empty</h1>
+            <h1 className="text-4xl font-extrabold mb-4 text-white font-display">Your Cart is Empty</h1>
             <Link href="/courses" className="btn-primary inline-flex items-center justify-center gap-2 text-lg">
               Browse Courses →
             </Link>
@@ -68,23 +66,22 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="pt-20 min-h-screen relative overflow-hidden">
+    <div className="pt-20 min-h-screen relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #330F95 0%, #1a0a4e 50%, #000000 100%)' }}>
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-primary-50"></div>
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-20 left-10 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="mb-10 animate-fade-in">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-primary-600 to-pink-600 rounded-xl flex items-center justify-center shadow-lg">
+            <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-500 rounded-xl flex items-center justify-center shadow-lg">
               <FaLock className="text-xl text-white" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-extrabold gradient-text font-display">Secure Checkout</h1>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-white font-display">Secure Checkout</h1>
           </div>
-          <p className="text-lg text-gray-600 font-light flex items-center gap-2">
+          <p className="text-lg text-gray-300 font-light flex items-center gap-2">
             <FaShieldAlt className="text-green-600" />
             Your payment information is secure and encrypted
           </p>
@@ -210,7 +207,7 @@ export default function CheckoutPage() {
                 )}
               </button>
 
-              <p className="text-sm text-gray-600 text-center mt-5 leading-relaxed">
+              <p className="text-sm text-gray-300 text-center mt-5 leading-relaxed">
                 By completing your purchase, you agree to our <span className="text-primary-600 font-semibold">Terms of Service</span> and <span className="text-primary-600 font-semibold">Privacy Policy</span>
               </p>
             </form>
